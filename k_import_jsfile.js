@@ -124,7 +124,7 @@ $.ajax({
 var epyt;
 var ivn,iv1,iv2,iv3,iv4;
 function kill(epyt) {
-  ivn=setInterval(function() { gkill(epyt);}, 2000);//默认等待时间2048
+  ivn=setInterval(function() { gkill(epyt);}, 2060);//默认等待时间2048
   switch(epyt){
     case 1:
         iv1 = ivn;
@@ -140,6 +140,6 @@ function kill(epyt) {
         break;
   }  
 }
-function stop_iv(iv){
-   clearInterval(iv);
+function stop_iv(ivn){
+   clearInterval(ivn);
 }
