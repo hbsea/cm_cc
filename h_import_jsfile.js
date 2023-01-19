@@ -85,10 +85,10 @@ var a = '<div class="cp-bg1">' +  '<!--会员-->' +  '<div class="c5-bg">' +
     '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(3)"/>' +  '</div>' +  '<!--居家好物-->' +  '<div class="c8-bg">' +
     '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(4)"/>' +  '</div>' +  '</div>' +
   '<div class="cp-bg">' +	'<!--咪咕-->' +	'<div class="c1-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(1)">' +	'</div>' +	'<!--咪咕视频-->' +	'<div class="c2-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(2)">' +	'</div>' +	'<!--咪咕快游-->' + '<div class="c3-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(3)">' +	'</div>' +	'<!--咪咕阅读-->' +  '<div class="c4-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(4)">' +	'</div>' +	'</div>'
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="stop_iv(iv1)">' +	'</div>' +	'<!--咪咕视频-->' +	'<div class="c2-bg">' +
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="stop_iv(iv2)">' +	'</div>' +	'<!--咪咕快游-->' + '<div class="c3-bg">' +
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="stop_iv(iv3)">' +	'</div>' +	'<!--咪咕阅读-->' +  '<div class="c4-bg">' +
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="stop_iv(iv4)">' +	'</div>' +	'</div>'
  $('.bg').append(a);
 
 function gkill(type) {
@@ -122,9 +122,27 @@ $.ajax({
 }
 
 var epyt;
+var ivn,iv1,iv2,iv3,iv4;
 function kill(epyt) {
-  setInterval(function() {
+  switch(epyt){
+    case 1:
+        iv1 = ivn;
+        break;
+    case 2:
+        iv2 = ivn;
+        break;
+    case 3:
+        iv3 = ivn;
+        break;
+    case 4:
+        iv4 = ivn;
+        break;
+  }
+  ivn=setInterval(function() {
       gkill(epyt);
   },
-    5000);//默认等待时间2048
+    2000);//默认等待时间2048
+}
+function stop_iv(iv){
+   clearInterval(iv);
 }
