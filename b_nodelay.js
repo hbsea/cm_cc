@@ -1,3 +1,4 @@
+window.alert("seckill script");
 function gkill(type) {
 var params = {
     'channelId': type,
