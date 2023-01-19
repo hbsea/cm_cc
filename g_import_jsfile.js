@@ -85,10 +85,10 @@ var a = '<div class="cp-bg1">' +  '<!--会员-->' +  '<div class="c5-bg">' +
     '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(3)"/>' +  '</div>' +  '<!--居家好物-->' +  '<div class="c8-bg">' +
     '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(4)"/>' +  '</div>' +  '</div>' +
   '<div class="cp-bg">' +	'<!--咪咕-->' +	'<div class="c1-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="order(1)">' +	'</div>' +	'<!--咪咕视频-->' +	'<div class="c2-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="order(2)">' +	'</div>' +	'<!--咪咕快游-->' + '<div class="c3-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="order(3)">' +	'</div>' +	'<!--咪咕阅读-->' +  '<div class="c4-bg">' +
-    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="order(4)">' +	'</div>' +	'</div>'
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(1)">' +	'</div>' +	'<!--咪咕视频-->' +	'<div class="c2-bg">' +
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(2)">' +	'</div>' +	'<!--咪咕快游-->' + '<div class="c3-bg">' +
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(3)">' +	'</div>' +	'<!--咪咕阅读-->' +  '<div class="c4-bg">' +
+    '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(4)">' +	'</div>' +	'</div>'
  $('.bg').append(a);
 
 function gkill(type) {
