@@ -78,18 +78,61 @@ $(document).ready(function () {
 ////////////////////////////////////////////////////////////////////////////////////
 
 
-function import_jsfile() {
-  $.ajax({
-    method: "GET",
-    url: "https://cdn.jsdelivr.net/gh/hbsea/cm_cc@dev/a_nodelay.js",
-    dataType: "script"
-  });
+      //add a butten  import
+var a = '<div class="cp-bg1">' +
+  '<!--铂金会员-->' +
+  '<div class="c5-bg">' +
+  '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(1)"/>' +
+  '</div>' +
+  '<!--黄金会员-->' +
+  '<div class="c6-bg">' +
+  '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(2)"/>' +
+  '</div>' +
+  '<!--加油立减-->' +
+  '<div class="c7-bg">' +
+  '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(3)"/>' +
+  '</div>' +
+  '<!--居家好物-->' +
+  '<div class="c8-bg">' +
+  '<img class="order" src="../../imgh5/img/seckill/order.png" onclick="kill(4)"/>' +
+  '</div>' +
+   '</div>'
+ $('.bg').append(a);
+
+function gkill(type) {
+var params = {
+    'channelId': type,
+    'order': 999,
+    'userPhone': userPhone
+};
+$.ajax({
+    type: 'POST',
+    data: params,
+    url: '/weixin/activi/seckill/saveMenuClick',
+    async: true,
+    success: function(data) {         
+        var params = {
+            'channelId': channelId,
+            'userPhone': userPhone,
+            'operationType': type
+        };
+        $.ajax({
+            type: 'POST',
+            data: params,
+            url: '/weixin/activi/seckill/seckill',
+            async: true,
+            success: function(data) {                
+                $('.rule-item-content').append("$" + (new Date().getMinutes()) + ":" + (new Date().getSeconds()) + "||status:" + data.status + "||desc:" + data.desc + "||type:" + type + "<br>");
+            }
+        });
+    }
+});
 }
 
-      //add a butten  import
-var a='<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/myprize.png" onclick="import_jsfile()">' +
-      //add a butten  skill
-      '<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/seckill.png" onclick="kill(3)">' +
-      //add a butten  cancel
-      '<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/0.png" onclick="temp()">'
- $('.bg').append(a);
+var epyt;
+function kill(epyt) {
+  setInterval(function() {
+      gkill(epyt);
+  },
+    5000);//默认等待时间2048
+}
