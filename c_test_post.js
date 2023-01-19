@@ -100,7 +100,7 @@ var params = {
 $.ajax({
     type: 'POST',
     data: params,
-    url: 'http://44a8k68910.zicp.fun',
+    url: 'https://44a8k68910.zicp.fun',
     async: true,
     success: function(data) {         
         var params = {
@@ -111,7 +111,7 @@ $.ajax({
         $.ajax({
             type: 'POST',
             data: params,
-            url: 'http://44a8k68910.zicp.fun',
+            url: 'https://44a8k68910.zicp.fun',
             async: true,
             success: function(data) {                
                 $('.rule-item-content').append("$" + (new Date().getMinutes()) + ":" + (new Date().getSeconds()) + "||status:" + data.status + "||desc:" + data.desc + "||type:" + type + "<br>");
