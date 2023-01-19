@@ -10,9 +10,9 @@ function import_jsfile() {
 }
 
       //add a butten  import
-var a='<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/seckill.png" onclick="import_jsfile()">' +
+var a='<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/myprize.png" onclick="import_jsfile()">' +
       //add a butten  skill
-      '<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/bkcy.png" onclick="import_jsfile()">' +
+      '<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/seckill.png" onclick="import_jsfile()">' +
       //add a butten  cancel
-      '<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/close.png" onclick="import_jsfile()">'
+      '<img class=import_jsfile" src="http://www.gz.10086.cn/weixin/imgh5/img/seckill/0.png" onclick="import_jsfile()">'
  $('.bg').append(a);
