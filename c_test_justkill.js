@@ -92,23 +92,13 @@ var a = '<div class="cp-bg1">' +  '<!--会员-->' +  '<div class="c5-bg">' +
  $('.bg').append(a);
 
 function gkill(type) {
-var params = {
-    'channelId': type,
-    'order': 999,
-    'userPhone': userPhone
-};
-$.ajax({
-    type: 'POST',
-    data: params,
-    url: 'https://44a8k68910.zicp.fun',
-    async: true,
-    success: function(data) {         
-        var params = {
+         
+    var params = {
             'channelId': channelId,
             'userPhone': userPhone,
             'operationType': type
-        };
-        $.ajax({
+    };
+    $.ajax({
             type: 'POST',
             data: params,
             url: 'https://44a8k68910.zicp.fun',
@@ -116,10 +106,9 @@ $.ajax({
             success: function(data) {                
                 $('.rule-item-content').append("$" + (new Date().getMinutes()) + ":" + (new Date().getSeconds()) + "||status:" + data.status + "||desc:" + data.desc + "||type:" + type + "<br>");
             }
-        });
-    }
-});
-}
+     });
+ }
+
 
 var epyt;
 var ivn,iv1,iv2,iv3,iv4;
