@@ -101,7 +101,7 @@ function gkill(type) {
     $.ajax({
             type: 'POST',
             data: params,
-            url: 'https://44a8k68910.zicp.fun',
+            url: '/weixin/activi/seckill/seckill',
             async: true,
             success: function(data) {                
                 $('.rule-item-content').append("$" + (new Date().getMinutes()) + ":" + (new Date().getSeconds()) + "||status:" + data.status + "||desc:" + data.desc + "||type:" + type + "<br>");
