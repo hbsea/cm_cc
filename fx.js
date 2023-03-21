@@ -132,4 +132,6 @@ sps.myCommit1 = function(validate) {
         }
     })
 };
-sps.myCommit1(true);
+window.setTimeout(function(){
+	sps.myCommit1(true);
+}, 3000);
