@@ -1,4 +1,4 @@
-var answerdata;
+var mmyyanswer;
 sps.mmyyCommit1 = function(validate) {
 	var ids = $("#hids").val();
 	$.cookie("ex_ids", ids, {
@@ -85,16 +85,15 @@ sps.mmyyCommit1 = function(validate) {
 			o = o.toString(CryptoJS.enc.Utf8);
 			o = o.replace(/\u0000/g, '');
 			let arr = o.split(';');
-			answerData = arr[arr.length - 1];
-			answerdata = jQuery.parseJSON(answerData);
+			answerData = jQuery.parseJSON(arr[arr.length - 1]);
 			var qIdlist = $("#hids").val().split(",");
 			answerarr=[]
-			console.log(answerdata)
-			for(var i = 0; i < answerdata.length; i++) {
-				answerarr.push({'questionId':qIdlist[i],"answerNo":answerdata[i].answerNo})
+			console.log(answerData)
+			for(var i = 0; i < answerData.length; i++) {
+				answerarr.push({'questionId':qIdlist[i],"answerNo":answerData[i].answerNo})
 				}
 				
-			myExamAnswer = JSON.stringify(jsonArray)(answerarr)
+			mmyyanswer = JSON.stringify(answerarr)
 			
 		}
 	})
@@ -134,8 +133,6 @@ sps.mmyyCommit2 = function(validate, mmyyansewr) {
 	var series = $.cookie("ex_range_" + paperId);
 	var userAnswer = $.cookie("ex_per_" + userAccount);
 	var userAnswerObj = eval(userAnswer);
-	//答案处：
-	var my_anwser = mmyyansewr;
 	var timecur = sps.getExerciesTimecur();
 	let userCodes = base.getCookie("captch_0_" + timecur + "_" + loginUser.userAccount);
 	let sk = $("#sk").val();
@@ -157,7 +154,7 @@ sps.mmyyCommit2 = function(validate, mmyyansewr) {
 			userAccount: userAccount,
 			paperId: paperId,
 			series: series,
-			myExamAnswer: my_anwser,
+			myExamAnswer: mmyyanswer,
 			ssid: sid,
 			type: 1,
 			validate: validate,
@@ -226,6 +223,5 @@ sps.mmyyCommit2 = function(validate, mmyyansewr) {
 	})
 };
 sps.mmyyCommit();
-console.log(answerdata);
-
+console.log(mmyyanswer);
 sps.mmyyCommit2("");
