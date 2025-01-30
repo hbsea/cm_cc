@@ -1,1 +1,1 @@
-window.alert("messege from test_alert");
+console.log("messege from test_alert");
